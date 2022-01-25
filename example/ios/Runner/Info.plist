@@ -43,5 +43,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<true/>
+    <key>Privacy - Camera Usage Description</key>
+    <string>OCR 识别需要开启您的摄像头权限，用于识别</string>
+    <key>Privacy - Photo Library Usage Description</key>
+    <string>OCR 识别需要您开启相册权限，浏览您的照片</string>
 </dict>
 </plist>

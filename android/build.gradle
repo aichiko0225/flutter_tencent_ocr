@@ -30,6 +30,19 @@ android {
     }
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 19
     }
+}
+
+repositories {
+    flatDir {
+        dirs "libs"
+    }
+}
+
+dependencies {
+    // 依赖腾讯云的 OcrSDK 的 aar
+    api files('libs/OcrSDKv1.0.9-release.aar')
+    // OCR SDK 返回实体对象需要的依赖
+    implementation 'com.google.code.gson:gson:2.8.6'
 }

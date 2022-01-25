@@ -1,5 +1,9 @@
 package com.example.flutter_tencent_ocr;
 
+
+
+import com.tencent.ocr.sdk.common.OcrSDKKit;
+
 import androidx.annotation.NonNull;
 
 import io.flutter.embedding.engine.plugins.FlutterPlugin;
