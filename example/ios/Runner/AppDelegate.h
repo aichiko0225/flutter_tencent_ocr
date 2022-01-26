@@ -3,4 +3,6 @@
 
 @interface AppDelegate : FlutterAppDelegate
 
+@property (nonatomic,strong) FlutterEngine *flutterEngine;
+
 @end

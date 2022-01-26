@@ -18,6 +18,6 @@ void main() {
   });
 
   test('getPlatformVersion', () async {
-    expect(await FlutterTencentOcr.platformVersion, '42');
+    expect(await TencentOcr.platformVersion, '42');
   });
 }

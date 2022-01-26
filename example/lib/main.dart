@@ -15,6 +15,9 @@ class MyApp extends StatefulWidget {
   State<MyApp> createState() => _MyAppState();
 }
 
+const String secretId = 'AKIDPkAGCyAELXerzx6PsFmEWdbO2Yxpu9Yl';
+const String secretKey = 'NamFi2DFB5siRMVbwJaiKbSAkDW0Yiz5';
+
 class _MyAppState extends State<MyApp> {
   String _platformVersion = 'Unknown';
 
@@ -22,6 +25,10 @@ class _MyAppState extends State<MyApp> {
   void initState() {
     super.initState();
     initPlatformState();
+
+    // TencentOcr.initOcrSDKConfig(const OcrApiKey(secretId: secretId, secretKey: secretKey));
+
+    BaiduOcr.initOcrSDKConfig(const OcrApiKey(secretId: 'G3PWq3LQoDRGDWNnbp2HT1vm', secretKey: 'qQExqWPhBL99eBuIy3obC6YmklbVi7sW'));
   }
 
   // Platform messages are asynchronous, so we initialize in an async method.
@@ -31,7 +38,7 @@ class _MyAppState extends State<MyApp> {
     // We also handle the message potentially returning null.
     try {
       platformVersion =
-          await FlutterTencentOcr.platformVersion ?? 'Unknown platform version';
+          await TencentOcr.platformVersion ?? 'Unknown platform version';
     } on PlatformException {
       platformVersion = 'Failed to get platform version.';
     }
@@ -56,6 +63,9 @@ class _MyAppState extends State<MyApp> {
         body: Center(
           child: Text('Running on: $_platformVersion\n'),
         ),
+        floatingActionButton: IconButton(onPressed: () {
+          TencentOcr.startProcessOcr(OcrProcessConfig(OcrType.IDCardOCR_FRONT));
+        }, icon: const Icon(Icons.camera_alt_outlined)),
       ),
     );
   }

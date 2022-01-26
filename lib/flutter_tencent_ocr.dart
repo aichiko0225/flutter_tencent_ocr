@@ -1,13 +1,7 @@
+// ignore_for_file: library_names
+library FlutterTencentOcr;
 
-import 'dart:async';
-
-import 'package:flutter/services.dart';
-
-class FlutterTencentOcr {
-  static const MethodChannel _channel = MethodChannel('flutter_tencent_ocr');
-
-  static Future<String?> get platformVersion async {
-    final String? version = await _channel.invokeMethod('getPlatformVersion');
-    return version;
-  }
-}
+export './src/baidu_ocr.dart';
+export './src/tencent_ocr.dart';
+export './src/ocr_api_key.dart';
+export './src/ocr_process_config.dart';

@@ -13,16 +13,14 @@ flutter_tencent_ocr 身份证图片识别插件
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*.{h,m,mm}'
+  s.source_files = 'Classes/**/*.{h,m,mm,xib}'
   s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '11.0'
   
   s.frameworks = 'Accelerate', 'CoreML'
   
-  s.resource = 'OcrSDK/OcrSDK.bundle'
-  
-  s.vendored_frameworks = 'OcrSDK/OcrSDKKit.framework', 'OcrSDK/tiny_opencv2.framework', 'OcrSDK/tnn.framework', 'OcrSDK/YTImageRefiner_pub.framework'
+  s.vendored_frameworks = 'lib/AipBase.framework', 'lib/AipOcrSdk.framework', 'lib/IdcardQuality.framework'
 
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
